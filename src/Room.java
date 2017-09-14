@@ -20,7 +20,7 @@ public class Room
     //don't have it set to static, otherwise it can't be called
     public void Display (Room room, Player player)
     {
-        while (Program.isRunning && player.hp > 0)
+        while (Main.isRunning && player.hp > 0)
         {
             System.out.println(room.name);
             room.isIn = true;
@@ -79,7 +79,7 @@ public class Room
             }
             else if (parsed.equals("quit"))
             {
-                Program.isRunning = false;
+                Main.isRunning = false;
             }
             else if (parsed.equals("inv"))
             {
