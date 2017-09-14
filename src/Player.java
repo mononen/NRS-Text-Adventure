@@ -2,10 +2,15 @@ public class Player
 {
     public String name;
     public int hp;
+    public Item item1 = null;
+    public Item item2 = null;
+    public Item item3 = null;
+    public Item item4 = null;
+    public Item item5 = null;
     public void PrintInv(Room start, Player player)
     {
         //something that scans through all the rooms or items, and reports if a player has it or not
-        System.out.println(start.name + "duh!");
+        System.out.println(start.name + " duh!");
         Boolean isRunning = true;
         while (isRunning)
         {

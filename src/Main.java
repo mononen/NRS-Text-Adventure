@@ -1,9 +1,11 @@
 public class Main {
 	public static boolean isRunning = true;
 	public static void main(String[] args) {
+		Splash.splashScreen();
 		// TODO Auto-generated method stub
 		 //kitchen generation
         //you enter an old dilapated kitchen. There is a bottle on the table and a door in front of you
+		//all assignments of room data goes here!
         Room Kitchen = new Room();
         {
             //Kitchen.prev is null
