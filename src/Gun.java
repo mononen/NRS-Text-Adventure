@@ -4,12 +4,16 @@ public class Gun extends Weapon
 	private double caliber;
 	private int ammo;
 	private boolean isAutomatic;
+	private boolean isSupressed;
 	
 	//constructor
 	public Gun()
 	{
 		super.setArmorPenetration(.9);
 		this.isAutomatic = false;
+		super.setWearMultiplier(1);
+		super.setStealth(0);
+		this.isSupressed = false;
 	}
 	//mutator
 	public double getCaliber()
@@ -24,6 +28,10 @@ public class Gun extends Weapon
 	{
 		return this.isAutomatic;
 	}
+	public boolean getIsSupressed() 
+	{
+		return this.isSupressed;
+	}
 	public void setCaliber(double caliber)
 	{
 		this.caliber = caliber;
@@ -36,8 +44,12 @@ public class Gun extends Weapon
 	{
 		this.isAutomatic = isAutomatic;
 	}
+	public void setIsSupressed(boolean isSupressed)
+	{
+		this.isSupressed = isSupressed;
+	}
 	public String toString()
 	{
-		return super.toString() + "the caliber is: " + this.caliber + "it has " + this.ammo + " bullets.";
+		return super.toString() + "bullets" + this.ammo + "supressor" + this.isSupressed + "is automatic" + this.isAutomatic + "armor penetration" + super.getArmorPenetration() + "caliber"+ this.caliber + "effective range" + super.getEffectiveRange() + "damage" + super.getAtkDmg() + "weight" + this.getWeight() + "aim time" + super.getAimTime();
 	}
 }

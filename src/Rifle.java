@@ -8,5 +8,6 @@ public class Rifle extends Gun
 		super.setRechargeTime(.2);
 		super.setAtkDmg(15);
 		super.setAimTime(1.5);
+		super.setWeight(15.0);
 	}
 }

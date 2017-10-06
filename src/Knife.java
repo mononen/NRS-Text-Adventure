@@ -13,7 +13,7 @@ public class Knife extends Weapon
 		super.setMaximumPenetratableArmor('2','B');
 	}
 	//no mutators
-	//tostring method
+	//to string method
 	public String toString()
 	{
 		return super.toString() + "Issa kneif!";

@@ -11,5 +11,10 @@ public class Sniper extends Gun
 		super.setRechargeTime(4.0);
 		super.setAtkDmg(40);
 		super.setAimTime(5.0);
+		super.setWeight(25.0);
+	}
+	public String toString()
+	{
+		return super.toString();
 	}
 }
