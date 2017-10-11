@@ -30,8 +30,5 @@ public class Splash {
 				+  "     \\/                \\/       \\/            \\/ \n"
 				
 				);
-		
-		
 	}
-
 }

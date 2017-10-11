@@ -12,6 +12,7 @@ public class MainWnd
 	{
 		Display display = new Display();
 		shell = new Shell(display);
+		Splash splash = new Splash();
 		//shell.setLayout(new FillLayout());
 		
 		label2 = new Label(shell, SWT.NONE);
@@ -21,29 +22,42 @@ public class MainWnd
 		label2.setBounds(0, 0, 800, 50);
 		
 		Label label = new Label(shell, SWT.BORDER);
-		label.setText("this is a label:");
+		label.setText("Welcome to my text adventure!");
 		label.setToolTipText("this is a label tooltip");
 		//user can type in the text widget
-		label.setBounds(0, 50, 800, 50);
+		label.setBounds(0, 50, 800, 70);
 		Text text = new Text(shell, SWT.NONE);
 		text.setText("this is the text in the text widget");
 		text.setBackground(display.getSystemColor(SWT.COLOR_DARK_BLUE));
 		text.setForeground(display.getSystemColor(SWT.COLOR_CYAN));
-		text.setBounds(0, 160, 800, 100);
-		
-		int toolbarSize = 30;
-		
+		text.setBounds(0, 180, 800, 100);
 		
 		Button button = new Button(shell, SWT.PUSH);
-		button.setBounds(50, 100, 80, 60);
+		button.setBounds(50, 120, 80, 60);
+		//listening for button depression
 		button.addSelectionListener(new SelectionAdapter()
+		{
+			@Override
+			public void widgetSelected(SelectionEvent e)
 			{
-				@Override
-				public void widgetSelected(SelectionEvent e)
+				System.out.println(text.getText());
+				text.setText("");
+			}
+		});
+		//listening for enter key depression
+		text.addListener(SWT.Traverse, new Listener()
+		{
+			@Override
+			public void handleEvent(Event event)
+			{
+				if(event.detail == SWT.TRAVERSE_RETURN)
 				{
-					System.out.println(text.getText());
+					System.out.println("ENTER PRESSED!");
+					System.out.println("Text recieved: " + text.getText());
+					text.setText("");
 				}
-			});
+			}
+		});
 		shell.setBounds(100, 100, 800, 600);
 		shell.open();
 		shell.addMouseMoveListener(e -> showSize(e));
