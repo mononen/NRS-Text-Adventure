@@ -8,20 +8,20 @@ public class MainWnd
 {
 	private static Label label2;
 	private static Shell shell;
-	private static String textInput;
 	public static void main(String[] args)
 	{
 		Runner runner = new Runner();
 		Display display = new Display();
 		shell = new Shell(display);
 		Splash splash = new Splash();
+		splash.splashScreen();
 		//shell.setLayout(new FillLayout());
 		
 		label2 = new Label(shell, SWT.NONE);
 		Font font = new Font(label2.getDisplay(), new FontData("Mono", 10, SWT.ITALIC));
 		label2.setFont(font);
 		label2.setText("here's some text with a font applied");
-		label2.setBounds(0, 0, 800, 50);
+		label2.setBounds(0, 0, 800, 80);
 		label2.setToolTipText("Random label expressing mouse listener event");
 		label2.setBackground(display.getSystemColor(SWT.COLOR_DARK_GRAY));
 		
@@ -30,18 +30,18 @@ public class MainWnd
 		label.setToolTipText("All responses to your commands will appear here");
 		label.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
 		//user can type in the text widget
-		label.setBounds(0, 50, 800, 70);
+		label.setBounds(0, 80, 800, 70);
 		Text text = new Text(shell, SWT.NONE);
 		text.setText("ENTER COMMANDS HERE!");
 		text.setToolTipText("Enter all of your commands here");
 		text.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
 		text.setForeground(display.getSystemColor(SWT.COLOR_CYAN));
-		text.setBounds(0, 120, 800, 100);
+		text.setBounds(0, 150, 800, 100);
 		
 		Button button = new Button(shell, SWT.PUSH);
 		button.setText("A button");
 		button.setToolTipText("what does it do?");
-		button.setBounds(50, 220, 80, 60);
+		button.setBounds(50, 250, 80, 60);
 		//listening for button depression
 		button.addSelectionListener(new SelectionAdapter()
 		{
@@ -62,13 +62,8 @@ public class MainWnd
 				{
 					System.out.println("ENTER PRESSED!");
 					System.out.println("Text recieved: " + text.getText());
-					textInput = text.getText();
 					String result = runner.logic(text.getText());
-					if(result != "uh-oh!") 
-					{
-						label.setText(result);
-					}
-					
+					label.setText(result);
 					text.setText("");
 				}
 			}
@@ -95,13 +90,5 @@ public class MainWnd
 		s+= "bounds for shell: " + shell.getBounds() + "\n";
 		s+= "mouse pointer: " + x + " " + y;
 		label2.setText(s);
-	}
-	public static String getTextInput() 
-	{
-		return textInput;
-	}
-	public static void setTextInput(String textInput) 
-	{
-		MainWnd.textInput = textInput;
 	}
 }
