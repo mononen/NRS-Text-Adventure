@@ -8,8 +8,11 @@ public class MainWnd
 {
 	private static Label label2;
 	private static Shell shell;
+	private static String textInput;
+	private static String instructionBox;
 	public static void main(String[] args)
 	{
+		Runner runner = new Runner();
 		Display display = new Display();
 		shell = new Shell(display);
 		Splash splash = new Splash();
@@ -21,8 +24,9 @@ public class MainWnd
 		label2.setText("here's some text with a font applied");
 		label2.setBounds(0, 0, 800, 50);
 		
+		instructionBox = "Welcome to my text adventure!\nAre you ready to play?!?!";
 		Label label = new Label(shell, SWT.BORDER);
-		label.setText("Welcome to my text adventure!");
+		label.setText(instructionBox);
 		label.setToolTipText("this is a label tooltip");
 		//user can type in the text widget
 		label.setBounds(0, 50, 800, 70);
@@ -54,6 +58,10 @@ public class MainWnd
 				{
 					System.out.println("ENTER PRESSED!");
 					System.out.println("Text recieved: " + text.getText());
+					textInput = text.getText();
+					String result = runner.logic(text.getText());
+					label.setText(result);
+					
 					text.setText("");
 				}
 			}
@@ -79,5 +87,19 @@ public class MainWnd
 		s+= "bounds for shell: " + shell.getBounds() + "\n";
 		s+= "mouse pointer: " + x + " " + y;
 		label2.setText(s);
+	}
+	public static String getTextInput() 
+	{
+		return textInput;
+	}
+	public static void setTextInput(String textInput) 
+	{
+		MainWnd.textInput = textInput;
+	}
+	public static String getInstructionBox() {
+		return instructionBox;
+	}
+	public static void setInstructionBox(String instructionBox) {
+		MainWnd.instructionBox = instructionBox;
 	}
 }

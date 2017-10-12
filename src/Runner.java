@@ -6,6 +6,7 @@
 
 public class Runner 
 {
+	/*
 	public static void main(String[] args)
 	{
 		//call splash object
@@ -18,4 +19,16 @@ public class Runner
 		Knife knife = new Knife();
 		
 	}
+	*/
+public String logic(String input)
+{
+	if (input.contains("y"))
+	{
+		return "Let's have some fun!:)";
+	}
+	else
+	{
+		return "uh-oh!";
+	}
+}
 }
