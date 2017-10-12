@@ -9,7 +9,6 @@ public class MainWnd
 	private static Label label2;
 	private static Shell shell;
 	private static String textInput;
-	private static String instructionBox;
 	public static void main(String[] args)
 	{
 		Runner runner = new Runner();
@@ -23,21 +22,26 @@ public class MainWnd
 		label2.setFont(font);
 		label2.setText("here's some text with a font applied");
 		label2.setBounds(0, 0, 800, 50);
+		label2.setToolTipText("Random label expressing mouse listener event");
+		label2.setBackground(display.getSystemColor(SWT.COLOR_DARK_GRAY));
 		
-		instructionBox = "Welcome to my text adventure!\nAre you ready to play?!?!";
 		Label label = new Label(shell, SWT.BORDER);
-		label.setText(instructionBox);
-		label.setToolTipText("this is a label tooltip");
+		label.setText("Welcome to my text adventure!\nAre you ready to play?!?!");
+		label.setToolTipText("All responses to your commands will appear here");
+		label.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
 		//user can type in the text widget
 		label.setBounds(0, 50, 800, 70);
 		Text text = new Text(shell, SWT.NONE);
-		text.setText("this is the text in the text widget");
-		text.setBackground(display.getSystemColor(SWT.COLOR_DARK_BLUE));
+		text.setText("ENTER COMMANDS HERE!");
+		text.setToolTipText("Enter all of your commands here");
+		text.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
 		text.setForeground(display.getSystemColor(SWT.COLOR_CYAN));
-		text.setBounds(0, 180, 800, 100);
+		text.setBounds(0, 120, 800, 100);
 		
 		Button button = new Button(shell, SWT.PUSH);
-		button.setBounds(50, 120, 80, 60);
+		button.setText("A button");
+		button.setToolTipText("what does it do?");
+		button.setBounds(50, 220, 80, 60);
 		//listening for button depression
 		button.addSelectionListener(new SelectionAdapter()
 		{
@@ -60,13 +64,17 @@ public class MainWnd
 					System.out.println("Text recieved: " + text.getText());
 					textInput = text.getText();
 					String result = runner.logic(text.getText());
-					label.setText(result);
+					if(result != "uh-oh!") 
+					{
+						label.setText(result);
+					}
 					
 					text.setText("");
 				}
 			}
 		});
-		shell.setBounds(100, 100, 800, 600);
+		shell.setBounds(100, 100, 800, 315);
+		shell.setText("Alex's Text Adventure!");
 		shell.open();
 		shell.addMouseMoveListener(e -> showSize(e));
 		label2.addMouseMoveListener(e -> showSize(e));
@@ -95,11 +103,5 @@ public class MainWnd
 	public static void setTextInput(String textInput) 
 	{
 		MainWnd.textInput = textInput;
-	}
-	public static String getInstructionBox() {
-		return instructionBox;
-	}
-	public static void setInstructionBox(String instructionBox) {
-		MainWnd.instructionBox = instructionBox;
 	}
 }
