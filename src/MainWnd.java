@@ -15,6 +15,11 @@ public class MainWnd
 		shell = new Shell(display);
 		Splash splash = new Splash();
 		splash.splashScreen();
+		try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
 		//shell.setLayout(new FillLayout());
 		
 		label2 = new Label(shell, SWT.NONE);
@@ -65,6 +70,11 @@ public class MainWnd
 					String result = runner.logic(text.getText());
 					label.setText(result);
 					text.setText("");
+					try {
+			            Thread.sleep(2000);
+			        } catch (InterruptedException e) {
+			        	e.printStackTrace();
+			        }
 				}
 			}
 		});

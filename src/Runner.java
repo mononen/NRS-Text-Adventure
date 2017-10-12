@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Runner 
 {
-	///*
+	/*
 	public static void main(String[] args)
 	{
 		//call splash object
@@ -21,16 +21,33 @@ public class Runner
 		System.out.println(weaponArray[0]);
 	}
 //*/
+	private ArrayList<Weapon> weapons = new ArrayList<>();
+	public Runner()
+	{
+		//initializing all of the items
+		weapons.add(new Sniper());
+		weapons.add(new DMR());
+		weapons.add(new Handgun());
+		weapons.add(new Rifle());
+		weapons.add(new Knife());
+	}
 	public String logic(String input)
 	{
 		if (input.contains("y"))
 		{
 			return "Let's have some fun!:)";
-			
 		}
 		else
 		{
 			return "Not understood!";
 		}
+	}
+	public ArrayList<Weapon> getWeapons() 
+	{
+		return weapons;
+	}
+	public void setWeapons(ArrayList<Weapon> weapons) 
+	{
+		this.weapons = weapons;
 	}
 }
