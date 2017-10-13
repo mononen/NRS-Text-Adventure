@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Text;
 
 /*
  * 
@@ -25,6 +26,8 @@ public class Runner
 	}
 //*/
 	private static MainWnd MainWindow;
+	//private static Label TmpLabel;
+	private static Text TmpTxt;
 	public static void main(String[] args)
 	{
 		MainWindow = new MainWnd();
@@ -59,6 +62,25 @@ public class Runner
 		{
 			
 		}
+	}
+	
+	public static void testing()
+	{
+		MainWindow.setLabelText("WEEEE-WOOOOO");
+		/*
+		Label TmpLabel = new Label(MainWindow.getShell(), SWT.NONE);
+		TmpLabel = MainWindow.getLabel();
+		String TMP = TmpLabel.getText();
+		
+		if(MainWindow.getLabel().getText().contains("y"))
+		{
+			MainWindow.setLabelText("Allrighty then!! LETS'A GO!  :)");
+		}
+		else
+		{
+			MainWindow.setLabelText("UH-OH!!!! THERE WAS A PROBLEM!!!");
+		}
+		*/
 	}
 	
 	public ArrayList<Weapon> getWeapons() 

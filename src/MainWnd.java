@@ -5,15 +5,16 @@ import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;
 
 public class MainWnd
-{
-	private static Label label2;
-	private static Shell shell;
-	private static Label label;
-	public static void MainWnd()
+{	
+	private static Shell shell = new Shell();
+	private static Label label2 = new Label(shell, SWT.NONE);
+	private static Label label = new Label(shell, SWT.NONE);
+	private static Text text = new Text(shell, SWT.NONE);
+	private static String LabelText;
+	public MainWnd()
 	{
-		Runner runner = new Runner();
-		Display display = new Display();
-		shell = new Shell(display);
+		final Display display = Display.getDefault();
+		//shell = new Shell(display);
 		Splash splash = new Splash();
 		splash.splashScreen();
 		try {
@@ -23,7 +24,7 @@ public class MainWnd
         }
 		//shell.setLayout(new FillLayout());
 		
-		label2 = new Label(shell, SWT.NONE);
+		//label2 = new Label(shell, SWT.NONE);
 		Font font = new Font(label2.getDisplay(), new FontData("Mono", 10, SWT.ITALIC));
 		label2.setFont(font);
 		label2.setText("here's some text with a font applied");
@@ -31,13 +32,13 @@ public class MainWnd
 		label2.setToolTipText("Random label expressing mouse listener event");
 		label2.setBackground(display.getSystemColor(SWT.COLOR_DARK_GRAY));
 		
-		label = new Label(shell, SWT.BORDER);
+		//label = new Label(shell, SWT.BORDER);
 		label.setText("Welcome to my text adventure!\nAre you ready to play?!?!");
 		label.setToolTipText("All responses to your commands will appear here");
 		label.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
 		//user can type in the text widget
 		label.setBounds(0, 80, 800, 70);
-		Text text = new Text(shell, SWT.NONE);
+		//text = new Text(shell, SWT.NONE);
 		text.setText("ENTER COMMANDS HERE!");
 		text.setToolTipText("Enter all of your commands here");
 		text.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
@@ -67,15 +68,9 @@ public class MainWnd
 				if(event.detail == SWT.TRAVERSE_RETURN)
 				{
 					System.out.println("ENTER PRESSED!");
-					System.out.println("Text recieved: " + text.getText());
-					String result = runner.logic(text.getText());
-					label.setText(result);
+					System.out.println(text.getText());
+					Runner.testing();
 					text.setText("");
-					try {
-			            Thread.sleep(2000);
-			        } catch (InterruptedException e) {
-			        	e.printStackTrace();
-			        }
 				}
 			}
 		});
@@ -105,6 +100,7 @@ public class MainWnd
 	public void setLabel(Label label)
 	{
 		this.label = label;
+		label.redraw();
 	}
 	public Label getLabel()
 	{
@@ -113,9 +109,27 @@ public class MainWnd
 	public void setShell(Shell shell)
 	{
 		this.shell = shell;
+		shell.redraw();
 	}
 	public Shell getShell()
 	{
 		return this.shell;
+	}
+	public void setText(Text text)
+	{
+		MainWnd.text = text;
+	}
+	public Text getText()
+	{
+		return text;
+	}
+	public String getLabelText() 
+	{
+		return LabelText;
+	}
+	public void setLabelText(String labelText) 
+	{
+		label.setText(labelText);
+		label.redraw();
 	}
 }
