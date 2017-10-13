@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Label;
+
 /*
  * 
  * this class runs the program.
@@ -21,10 +24,16 @@ public class Runner
 		System.out.println(weaponArray[0]);
 	}
 //*/
+	private static MainWnd MainWindow;
+	public static void main(String[] args)
+	{
+		MainWindow = new MainWnd();
+	}
 	private ArrayList<Weapon> weapons = new ArrayList<>();
 	public Runner()
 	{
 		//initializing all of the items
+		/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>print these through your text box.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		weapons.add(new Sniper());
 		weapons.add(new DMR());
 		weapons.add(new Handgun());
@@ -42,6 +51,16 @@ public class Runner
 			return "Not understood!";
 		}
 	}
+	
+	public void Logic2(String input)
+	{
+		Label label = new Label(MainWindow.getShell(), SWT.NONE);
+		if(input.contains("y"))
+		{
+			
+		}
+	}
+	
 	public ArrayList<Weapon> getWeapons() 
 	{
 		return weapons;

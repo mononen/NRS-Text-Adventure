@@ -8,7 +8,8 @@ public class MainWnd
 {
 	private static Label label2;
 	private static Shell shell;
-	public static void main(String[] args)
+	private static Label label;
+	public static void MainWnd()
 	{
 		Runner runner = new Runner();
 		Display display = new Display();
@@ -30,7 +31,7 @@ public class MainWnd
 		label2.setToolTipText("Random label expressing mouse listener event");
 		label2.setBackground(display.getSystemColor(SWT.COLOR_DARK_GRAY));
 		
-		Label label = new Label(shell, SWT.BORDER);
+		label = new Label(shell, SWT.BORDER);
 		label.setText("Welcome to my text adventure!\nAre you ready to play?!?!");
 		label.setToolTipText("All responses to your commands will appear here");
 		label.setBackground(display.getSystemColor(SWT.COLOR_GRAY));
@@ -100,5 +101,21 @@ public class MainWnd
 		s+= "bounds for shell: " + shell.getBounds() + "\n";
 		s+= "mouse pointer: " + x + " " + y;
 		label2.setText(s);
+	}
+	public void setLabel(Label label)
+	{
+		this.label = label;
+	}
+	public Label getLabel()
+	{
+		return this.label;
+	}
+	public void setShell(Shell shell)
+	{
+		this.shell = shell;
+	}
+	public Shell getShell()
+	{
+		return this.shell;
 	}
 }
