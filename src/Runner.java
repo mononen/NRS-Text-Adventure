@@ -25,12 +25,10 @@ public class Runner
 		System.out.println(weaponArray[0]);
 	}
 //*/
-	private static MainWnd MainWindow;
 	//private static Label TmpLabel;
-	private static Text TmpTxt;
 	public static void main(String[] args)
 	{
-		MainWindow = new MainWnd();
+		MainWnd MainWindow = new MainWnd();
 	}
 	private ArrayList<Weapon> weapons = new ArrayList<>();
 	public Runner()
@@ -43,44 +41,17 @@ public class Runner
 		weapons.add(new Rifle());
 		weapons.add(new Knife());
 	}
-	public String logic(String input)
-	{
-		if (input.contains("y"))
-		{
-			return "Let's have some fun!:)";
-		}
-		else
-		{
-			return "Not understood!";
-		}
-	}
 	
-	public void Logic2(String input)
+	public static void Evaluate(Label label, String input)
 	{
-		Label label = new Label(MainWindow.getShell(), SWT.NONE);
 		if(input.contains("y"))
 		{
-			
-		}
-	}
-	
-	public static void testing()
-	{
-		MainWindow.setLabelText("WEEEE-WOOOOO");
-		/*
-		Label TmpLabel = new Label(MainWindow.getShell(), SWT.NONE);
-		TmpLabel = MainWindow.getLabel();
-		String TMP = TmpLabel.getText();
-		
-		if(MainWindow.getLabel().getText().contains("y"))
-		{
-			MainWindow.setLabelText("Allrighty then!! LETS'A GO!  :)");
+			label.setText("Allrighty then!! LETS'A GO!  :)");
 		}
 		else
 		{
-			MainWindow.setLabelText("UH-OH!!!! THERE WAS A PROBLEM!!!");
+			label.setText("UH-OH!!!! THERE WAS A PROBLEM!!!");
 		}
-		*/
 	}
 	
 	public ArrayList<Weapon> getWeapons() 

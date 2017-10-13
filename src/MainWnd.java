@@ -69,7 +69,8 @@ public class MainWnd
 				{
 					System.out.println("ENTER PRESSED!");
 					System.out.println(text.getText());
-					Runner.testing();
+					//Runner.testing();
+					Runner.Evaluate(label, text.getText());
 					text.setText("");
 				}
 			}
@@ -97,6 +98,8 @@ public class MainWnd
 		s+= "mouse pointer: " + x + " " + y;
 		label2.setText(s);
 	}
+	//unused getters and setters
+	/*
 	public void setLabel(Label label)
 	{
 		this.label = label;
@@ -132,4 +135,5 @@ public class MainWnd
 		label.setText(labelText);
 		label.redraw();
 	}
+	*/
 }
