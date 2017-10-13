@@ -30,7 +30,7 @@ public class Runner
 	{
 		MainWnd MainWindow = new MainWnd();
 	}
-	private ArrayList<Weapon> weapons = new ArrayList<>();
+	private static ArrayList<Weapon> weapons = new ArrayList<>();
 	public Runner()
 	{
 		//initializing all of the items
@@ -47,6 +47,14 @@ public class Runner
 		if(input.contains("y"))
 		{
 			label.setText("Allrighty then!! LETS'A GO!  :)");
+			Wait(1);
+			label.setText("Printing the required programming homework arraylist.");
+			Wait(1);
+			for(int i = 0; i < weapons.size(); i++)
+			{
+				label.setText(weapons.get(i).toString());
+				Wait(3);
+			}
 		}
 		else
 		{
@@ -60,6 +68,14 @@ public class Runner
 	}
 	public void setWeapons(ArrayList<Weapon> weapons) 
 	{
-		this.weapons = weapons;
+		Runner.weapons = weapons;
+	}
+	public static void Wait(double timer)
+	{
+		try {
+            Thread.sleep((long) (timer*1000));
+        } catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
 	}
 }

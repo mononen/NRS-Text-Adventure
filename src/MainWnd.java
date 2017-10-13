@@ -13,6 +13,7 @@ public class MainWnd
 	private static String LabelText;
 	public MainWnd()
 	{
+		Runner runner = new Runner();
 		final Display display = Display.getDefault();
 		//shell = new Shell(display);
 		Splash splash = new Splash();
