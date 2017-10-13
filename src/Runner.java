@@ -1,9 +1,5 @@
 import java.util.ArrayList;
-
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
-
 /*
  * 
  * this class runs the program.
@@ -34,7 +30,6 @@ public class Runner
 	public Runner()
 	{
 		//initializing all of the items
-		/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>print these through your text box.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		weapons.add(new Sniper());
 		weapons.add(new DMR());
 		weapons.add(new Handgun());
