@@ -1,3 +1,4 @@
+//animals are organic beings
 public class Animal 
 {
 	private String name;
