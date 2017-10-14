@@ -4,6 +4,7 @@ public class Gun extends Weapon
 	private double caliber;
 	private int ammo;
 	private boolean isAutomatic;
+	private boolean isSupressed;
 	
 	//constructor
 	public Gun()
@@ -35,6 +36,14 @@ public class Gun extends Weapon
 	public void setIsAutomatic(boolean isAutomatic)
 	{
 		this.isAutomatic = isAutomatic;
+	}
+	public boolean isSupressed() 
+	{
+		return isSupressed;
+	}
+	public void setSupressed(boolean isSupressed) 
+	{
+		this.isSupressed = isSupressed;
 	}
 	public String toString()
 	{

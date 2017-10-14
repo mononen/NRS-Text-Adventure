@@ -4,5 +4,6 @@ public class DMR extends Gun
 	{
 		super.setEffectiveRange(800);
 		super.setRechargeTime(.75);
+		super.setAtkDmg(12);
 	}
 }

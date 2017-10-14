@@ -70,8 +70,8 @@ public class MainWnd
 				{
 					System.out.println("ENTER PRESSED!");
 					System.out.println(text.getText());
-					//Runner.testing();
 					Runner.Evaluate(label, text.getText());
+					//^^^^^^^^very important!^^^^^^^^^^^^^^
 					text.setText("");
 				}
 			}
