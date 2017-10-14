@@ -1,9 +1,5 @@
 import java.util.ArrayList;
-
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
-
 /*
  * 
  * this class runs the program.
