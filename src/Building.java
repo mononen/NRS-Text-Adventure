@@ -37,4 +37,13 @@ public class Building
 			Floors.add(new Floor());
 		}
 	}
+	public String toString()
+	{
+		String s = null;
+		for (int i = 0; i < Floors.size(); i++)
+		{
+			s += Floors.get(i).toString();
+		}
+		return s;
+	}
 }

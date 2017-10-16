@@ -10,6 +10,7 @@ public class Room
 	public Room()
 	{
 		//zero arg constructor with zero construction???
+		//is this legal
 	}
 	
 	//adding of weapons and animals have to be done manually, because of amount of children.
@@ -44,6 +45,12 @@ public class Room
 	{
 		return Consumables.get(index);
 	}
+	public void addConsumable(Consumable consumable)
+	{
+		Consumables.add(consumable);
+	}
+	
+	
 	public static ArrayList<Weapon> getWeapons() 
 	{
 		return Weapons;
@@ -67,6 +74,8 @@ public class Room
 	{
 		Weapons.add(weapon);
 	}
+	
+	
 	public static ArrayList<Utility> getUtilities() 
 	{
 		return Utilities;
@@ -86,6 +95,12 @@ public class Room
 	{
 		return Utilities.get(index);
 	}
+	public void addUtility(Utility utility)
+	{
+		Utilities.add(utility);
+	}
+	
+	
 	public static ArrayList<Animal> getAnimals() 
 	{
 		return Animals;
@@ -108,5 +123,10 @@ public class Room
 	public void addAnimal(Animal animal)
 	{
 		Animals.add(animal);
+	}
+	
+	public String toString()
+	{
+		return "consumables: " + Consumables.toString() + ", Utilities: " + Utilities.toString() + ", Animals: " + Animals.toString() + ", Weapons: " + Weapons.toString();
 	}
 }

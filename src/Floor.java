@@ -34,4 +34,13 @@ public class Floor
 			Rooms.add(new Room());
 		}
 	}
+	public String toString()
+	{
+		String s = null;
+		for (int i = 0; i < Rooms.size(); i++)
+		{
+			s += Rooms.get(i).toString();
+		}
+		return s;
+	}
 }

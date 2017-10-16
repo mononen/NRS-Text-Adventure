@@ -28,7 +28,7 @@ public class Runner
 	}
 	private static ArrayList<Animal> animals = new ArrayList<>();
 	private static ArrayList<Weapon> weapons = new ArrayList<>();
-	private Building building;
+	private static Building building;
 	public Runner()
 	{
 		//initializing all of the items
@@ -46,12 +46,13 @@ public class Runner
 		animals.add(new Human("Kayden"));
 		animals.get(0).setTemperament("barbarian");
 		animals.get(3).setTemperament("relaxed");
-		animals.get(5).setTemperament("lunatic");
+		animals.get(4).setTemperament("lunatic");
 		
 		building = new Building(2);
 		building.getFloor(0).addRooms(2);
 		building.getFloor(1).getRoom(1).addWeapon(new Rifle());
 		building.getFloor(1).getRoom(2).addAnimal(new Human("Bozo", "clown"));
+		building.getFloor(0).getRoom(0).addAnimal(new Human("JOIJIO", "lkadsf"));
 	}
 	
 	public static void Evaluate(Label label, String input)
@@ -62,11 +63,7 @@ public class Runner
 			Wait(1);
 			label.setText("Printing the required programming homework arraylist.");
 			Wait(1);
-			for(int i = 0; i < animals.size(); i++)
-			{
-				label.setText(animals.get(i).toString());
-				Wait(3);
-			}
+			System.out.println(building.toString());
 		}
 		else
 		{
