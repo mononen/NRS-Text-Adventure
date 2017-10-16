@@ -12,6 +12,7 @@ public class Weapon
 	private double armorPenetration;
 	private char maximumPenetratableArmor[] = new char[2];
 	private double aimTime;
+	private String name;
 	
 	//constructors
 	public Weapon()
@@ -125,5 +126,15 @@ public class Weapon
 	public String toString()
 	{
 		return "Attack damage: " + this.atkDmg + "\nWear of object: " + this.wear;
+	}
+
+	public String getName() 
+	{
+		return this.name;
+	}
+
+	public void setName(String name) 
+	{
+		this.name = name;
 	}
 }
