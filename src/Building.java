@@ -16,7 +16,7 @@ public class Building
 		}
 	}
 
-	public static ArrayList<Floor> getFloors() 
+	public ArrayList<Floor> getFloors() 
 	{
 		return Floors;
 	}
@@ -26,11 +26,11 @@ public class Building
 		return Floors.get(index);
 	}
 
-	public static void setFloors(ArrayList<Floor> floors) 
+	public void setFloors(ArrayList<Floor> floors) 
 	{
 		Floors = floors;
 	}
-	public static void addFloors(int floors)
+	public void addFloors(int floors)
 	{
 		for (int i = 0; i < floors; i++)
 		{

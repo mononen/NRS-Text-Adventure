@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.*;
 import org.eclipse.swt.graphics.*;
@@ -11,9 +13,20 @@ public class MainWnd
 	private static Label label = new Label(shell, SWT.NONE);
 	private static Text text = new Text(shell, SWT.NONE);
 	private static String LabelText;
+	Runner runner;
+	ArrayList<Building> buildings = new ArrayList<>();
+	Player player  = new Player();
+	
+	public void SetupObject(ArrayList<Building> building, Player player)
+	{
+		this.buildings = building;
+		this.player = player;
+	}
+	
 	public MainWnd()
 	{
-		Runner runner = new Runner();
+		
+		//Runner runner = new Runner();
 		final Display display = Display.getDefault();
 		//shell = new Shell(display);
 		Splash splash = new Splash();
@@ -68,9 +81,11 @@ public class MainWnd
 			{
 				if(event.detail == SWT.TRAVERSE_RETURN)
 				{
+					
+				
 					System.out.println("ENTER PRESSED!");
 					System.out.println(text.getText());
-					Runner.Evaluate(label, text.getText());
+					//Runner.Evaluate(label, text.getText());
 					//^^^^^^^^very important!^^^^^^^^^^^^^^
 					text.setText("");
 				}

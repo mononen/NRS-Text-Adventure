@@ -26,11 +26,11 @@ public class Room
 		}
 	}
 	
-	public static ArrayList<Consumable> getConsumables() 
+	public ArrayList<Consumable> getConsumables() 
 	{
 		return Consumables;
 	}
-	public static void setConsumables(ArrayList<Consumable> consumables) 
+	public void setConsumables(ArrayList<Consumable> consumables) 
 	{
 		Consumables = consumables;
 	}
@@ -51,11 +51,11 @@ public class Room
 	}
 	
 	
-	public static ArrayList<Weapon> getWeapons() 
+	public ArrayList<Weapon> getWeapons() 
 	{
 		return Weapons;
 	}
-	public static void setWeapons(ArrayList<Weapon> weapons) 
+	public void setWeapons(ArrayList<Weapon> weapons) 
 	{
 		Weapons = weapons;
 	}
@@ -76,11 +76,11 @@ public class Room
 	}
 	
 	
-	public static ArrayList<Utility> getUtilities() 
+	public ArrayList<Utility> getUtilities() 
 	{
 		return Utilities;
 	}
-	public static void setUtilities(ArrayList<Utility> utilities) 
+	public void setUtilities(ArrayList<Utility> utilities) 
 	{
 		Utilities = utilities;
 	}
@@ -101,11 +101,11 @@ public class Room
 	}
 	
 	
-	public static ArrayList<Animal> getAnimals() 
+	public ArrayList<Animal> getAnimals() 
 	{
 		return Animals;
 	}
-	public static void setAnimals(ArrayList<Animal> animals) 
+	public void setAnimals(ArrayList<Animal> animals) 
 	{
 		Animals = animals;
 	}
