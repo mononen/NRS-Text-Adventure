@@ -24,5 +24,9 @@ public class Zone
 	{
 		this.buildings = buildings;
 	}
+	public Building getBuilding(int index)
+	{
+		return this.buildings.get(index);
+	}
 
 }

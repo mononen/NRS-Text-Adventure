@@ -14,11 +14,12 @@ public class MainWnd
 	private static Text text = new Text(shell, SWT.NONE);
 	Runner runner;
 	ArrayList<Building> buildings = new ArrayList<>();
+	Map map = new Map();
 	Player player  = new Player();
 	
-	public void SetupObject(ArrayList<Building> building, Player player)
+	public void SetupObject(Map map, Player player)
 	{
-		this.buildings = building;
+		this.map = map;
 		this.player = player;
 	}
 	

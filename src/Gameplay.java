@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Gameplay 
 {
-	ArrayList<Building> buildings = new ArrayList<>();
+	//ArrayList<Building> buildings = new ArrayList<>();
 	Map map = new Map();
 	Player player = new Player();
 	MainWnd mainwindow;
@@ -36,15 +36,16 @@ public class Gameplay
 		animals.get(3).setTemperament("relaxed");
 		animals.get(4).setTemperament("lunatic");
 		
-		buildings.add(new Building(2));
-		buildings.get(0).getFloor(0).addRooms(2);
+		map.getAboveGroundAtPos(0, 0).getBuildings().add(new Building(2));
+		map.getAboveGroundAtPos(0, 0).getBuildings().get(0).getFloor(0).addRooms(2);
 		//building.addFloors(1);
-		buildings.get(0).getFloor(1).addRooms(2);
-		buildings.get(0).getFloor(1).getRoom(0).addWeapon(new Rifle());
-		buildings.get(0).getFloor(1).getRoom(1).addAnimal(new Human("Bozo", "clown"));
-		buildings.get(0).getFloor(0).getRoom(0).addAnimal(new Human("JOIJIO", "lkadsf"));
+		map.getAboveGroundAtPos(0, 0).getBuildings().get(0).getFloor(1).addRooms(2);
+		map.getAboveGroundAtPos(0, 0).getBuildings().get(0).getFloor(1).getRoom(0).addWeapon(new Rifle());
+		map.getAboveGroundAtPos(0, 0).getBuildings().get(0).getFloor(1).getRoom(1).addAnimal(new Human("Bozo", "clown"));
+		map.getAboveGroundAtPos(0, 0).getBuildings().get(0).getFloor(0).getRoom(0).addAnimal(new Human("JOIJIO", "lkadsf"));
+		//fiddling about with map
 		
-		this.mainwindow.SetupObject(buildings, player);
+		this.mainwindow.SetupObject(map, player);
 		
 	}
 	
@@ -54,10 +55,11 @@ public class Gameplay
 		
 		if (input.contains("right"))
 		{
-			int i1 = player.getPosition(0) + 1;
-			int i2 = player.getPosition(1);
-			
-			
+			player.positionRight();
+		}
+		if (input.contains("left"))
+		{
+			player.positionLeft();
 		}
 	}
 }
