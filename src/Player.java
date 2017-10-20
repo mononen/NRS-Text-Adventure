@@ -9,8 +9,12 @@ public class Player
 	private double agility;
 	private double weight;
 	private double maxweight;
+	//monitors position (x,y), references 2 dimensional array map
+	private int Position[] = new int[2];
 	public Player()
 	{
+		this.Position[0] = 0;
+		this.Position[1] = 1;
 		this.maxweight = 70;
 	}
 	public ArrayList<Weapon> getWeapons() 
@@ -67,5 +71,41 @@ public class Player
 	public void setMaxweight(double maxweight) 
 	{
 		this.maxweight = maxweight;
+	}
+	public int[] getPosition() 
+	{
+		return Position;
+	}
+	public int getPosition(int i)
+	{
+		return Position[i];
+	}
+	public void setPosition(int position[]) 
+	{
+		Position = position;
+	}
+	public void setPositionX(int position)
+	{
+		this.Position[0] = position;
+	}
+	public void setPositionY(int position)
+	{
+		this.Position[1] = position;
+	}
+	public void positionLeft()
+	{
+		this.Position[0]--;
+	}
+	public void positionRight()
+	{
+		this.Position[0]++;
+	}
+	public void positionUp()
+	{
+		this.Position[1]++;
+	}
+	public void positionDown()
+	{
+		this.Position[1]--;
 	}
 }

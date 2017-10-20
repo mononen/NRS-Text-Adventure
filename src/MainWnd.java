@@ -12,7 +12,6 @@ public class MainWnd
 	private static Label label2 = new Label(shell, SWT.NONE);
 	private static Label label = new Label(shell, SWT.NONE);
 	private static Text text = new Text(shell, SWT.NONE);
-	private static String LabelText;
 	Runner runner;
 	ArrayList<Building> buildings = new ArrayList<>();
 	Player player  = new Player();
@@ -25,7 +24,6 @@ public class MainWnd
 	
 	public MainWnd()
 	{
-		
 		//Runner runner = new Runner();
 		final Display display = Display.getDefault();
 		//shell = new Shell(display);
@@ -114,6 +112,17 @@ public class MainWnd
 		s+= "mouse pointer: " + x + " " + y;
 		label2.setText(s);
 	}
+	
+	public Text getText()
+	{
+		return this.text;
+	}
+	public void setLabel(Label label)
+	{
+		this.label = label;
+	}
+	
+	
 	//unused getters and setters
 	/*
 	public void setLabel(Label label)
