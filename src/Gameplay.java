@@ -57,9 +57,17 @@ public class Gameplay
 		{
 			player.positionRight();
 		}
-		if (input.contains("left"))
+		else if (input.contains("left"))
 		{
 			player.positionLeft();
+		}
+		else if (input.contains("forward"))
+		{
+			player.positionUp();
+		}
+		else if (input.contains("back"))
+		{
+			player.positionDown();
 		}
 	}
 }
