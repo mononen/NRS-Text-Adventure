@@ -14,8 +14,11 @@ public class Runner
 	//private static Label TmpLabel;
 	public static void main(String[] args)
 	{
-		MainWnd MainWindow = new MainWnd();
-		Gameplay gameplay = new Gameplay(MainWindow);
+		Splash splash = new Splash();
+		splash.stayFrosty();
+		splash.enceLogo();
+		//MainWnd MainWindow = new MainWnd();
+		//Gameplay gameplay = new Gameplay(MainWindow);
 	}
 
 	
