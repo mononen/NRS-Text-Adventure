@@ -2,18 +2,33 @@ import java.util.ArrayList;
 
 public class Menu
 {	
-	private ArrayList<String> list = new ArrayList<>();
-	
 	public Menu()
 	{
-		list.add("this is the menu!");
+		
 	}
-	public void Display()
+	
+	//menu selection
+	public void selection(int option)
 	{
-		for(int i = 0;i< list.size(); i++)
+		switch(option)
 		{
-			String x = list.get(i);
-			System.out.println(x + ", ");
+		case 1: System.out.println("HELLO THERE!");
+		break;
+		case 2: System.out.println("STARTING GAME!");
+		break;
+		case 3: System.out.println("WOOOOOOOOOOO!");
+		break;
+		case 4: System.out.println("AAAWOOOOOOGAAAAAAAAHHHH!");
+		break;
+		default:
+			System.out.println("*spooky voice* good luck!");
+			break;
 		}
+	}
+	//draws the menu
+	public void drawMenu()
+	{
+		System.out.println("this is the menu");
+		System.out.println("1 - option 1 \n2 - option 2\n3 - option 3\n4 - option 4\n5 - exit");
 	}
 }
