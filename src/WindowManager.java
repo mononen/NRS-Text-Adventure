@@ -13,33 +13,12 @@ import org.eclipse.swt.widgets.Text;
 
 public class WindowManager 
 {
-	private Label label2;
-	private Label label;
-	private Text text;
-	private Shell shell;
-	private Display display;
-	private int WindowStatus = 1;
-	
-	public WindowManager(Shell shell, Label label, Label label2, Text text, Display display)
+	int windowStatus;
+	public WindowManager() 
 	{
-		this.shell = shell;
-		this.label = label;
-		this.label2 = label2;
-		this.text = text;
-		this.display = display;
+		
 	}
-	public void switchWindow(int selectWindow)
-	{
-		if(WindowStatus == 1)
-		{
-			MenuWindow();
-		}
-		else if(WindowStatus == 0)
-		{
-			MainWindow();
-		}
-	}
-	public void MenuWindow()
+	public void switchToMenuWindow(Shell shell, Label label, Label label2, Text text, Display display)
 	{
 		Font font = new Font(label2.getDisplay(), new FontData("Mono", 10, SWT.ITALIC));
 		label2.setFont(font);
@@ -97,7 +76,7 @@ public class WindowManager
 			}
 		});
 	}
-	public void MainWindow()
+	public void switchToMainWindow(Shell shell, Label label, Label label2, Text text, Display display)
 	{
 		Font font = new Font(label2.getDisplay(), new FontData("Mono", 10, SWT.ITALIC));
 		label2.setFont(font);
@@ -152,10 +131,9 @@ public class WindowManager
 			}
 		});
 	}
-	public int getWindowStatus() {
-		return WindowStatus;
-	}
-	public void setWindowStatus(int windowStatus) {
-		WindowStatus = windowStatus;
+	
+	public int getWindowStatus()
+	{
+		return this.windowStatus;
 	}
 }

@@ -12,6 +12,7 @@ public class MainWnd
 	private static Label label2 = new Label(shell, SWT.NONE);
 	private static Label label = new Label(shell, SWT.NONE);
 	private static Text text = new Text(shell, SWT.NONE);
+	WindowManager WindowManager = new WindowManager();
 	Runner runner;
 	ArrayList<Building> buildings = new ArrayList<>();
 	Map map = new Map();
@@ -35,6 +36,9 @@ public class MainWnd
         } catch (InterruptedException e) {
         	e.printStackTrace();
         }
+		
+		WindowManager.switchToMenuWindow(shell, label, label2, text, display);
+		
 		//shell.setLayout(new FillLayout());
 		
 		//label2 = new Label(shell, SWT.NONE);
